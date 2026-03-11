@@ -16,13 +16,13 @@ public class Output {
         if (turn == 1) {
 
             // invert array for black's perspective
-            for (int file = 0; file < 8; file++) {
+            for (int rank = 0; rank < 8; rank++) {
 
-                for (int rank = 0; rank < 4; rank++) {
+                for (int file = 0; file < 4; file++) {
 
-                    char tempVal = chessboardArray[file][rank];
-                    chessboardArray[file][rank] = chessboardArray[7-file][7-rank];
-                    chessboardArray[7-file][7-rank] = tempVal;
+                    char tempVal = chessboardArray[rank][file];
+                    chessboardArray[rank][file] = chessboardArray[7-rank][7-file];
+                    chessboardArray[7-rank][7-file] = tempVal;
 
                 }
 
@@ -32,21 +32,22 @@ public class Output {
 
         System.out.print("\n   +---+---+---+---+---+---+---+---+");
 
-        for (int file = 0; file < 8; file++) {
+        for (int rank = 0; rank < 8; rank++) {
 
-            int index = 8 - file;
+            // calculating the rank index number
+            int index = 8 - rank;
 
             if (turn == 1) {
 
-                index = file + 1;
+                index = rank + 1;
 
             }
 
             System.out.print("\n "+(index)+" |");
 
-            for (int rank = 0; rank < 8; rank++) {
+            for (int file = 0; file < 8; file++) {
 
-                switch (chessboardArray[file][rank]) {
+                switch (chessboardArray[rank][file]) {
 
                     case 'k':
                         System.out.print(" ♚ |");

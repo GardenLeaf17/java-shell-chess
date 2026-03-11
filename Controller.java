@@ -49,12 +49,12 @@ public class Controller {
         }
 
         // adding empty spaces
-        for (int file = 2; file < 6; file++) {
+        for (int rank = 2; rank < 6; rank++) {
 
-            for (int rank = 0; rank < 8; rank++) {
+            for (int file = 0; file < 8; file++) {
 
-                chessboardArray[file][rank] = 'e';
-                chessboardArray[file][rank] = 'e';
+                chessboardArray[rank][file] = 'e';
+                chessboardArray[rank][file] = 'e';
 
             }
 
@@ -68,7 +68,7 @@ public class Controller {
 
         char[][] chessboard = Controller.initialiseBoard();
 
-        //Output.printChessBoardToShell(chessboard, 0);
+        Output.printChessBoardToShell(chessboard, 0);
 
     }
 
