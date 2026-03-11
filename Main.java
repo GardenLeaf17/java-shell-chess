@@ -2,9 +2,9 @@ public class Main {
 
     static void main(String[] args) {
 
-        char[][] chessboard = Controller.initialiseBoard();
+        Output.printMainMenu();
 
-        Output.printChessBoardToShell(chessboard, 0);
+        Controller.beginGame();
 
     }
 

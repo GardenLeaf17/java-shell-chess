@@ -64,4 +64,12 @@ public class Controller {
 
     }
 
+    public static void beginGame() {
+
+        char[][] chessboard = Controller.initialiseBoard();
+
+        //Output.printChessBoardToShell(chessboard, 0);
+
+    }
+
 }
