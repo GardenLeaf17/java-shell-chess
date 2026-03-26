@@ -4,8 +4,11 @@ public class Controller {
 
         char[][] chessboardArray = new char[8][8];
 
+        // piece encoding:
+
         // white pieces are in lowercase
         // black pieces are in uppercase
+
         // k=king
         // q=queen
         // r=rook
@@ -68,7 +71,12 @@ public class Controller {
 
         char[][] chessboard = Controller.initialiseBoard();
 
-        Output.printChessBoardToShell(chessboard, 0);
+        int turn = 0;
+        int move = 0;
+
+        Output.printChessBoardToShell(chessboard, turn, move);
+
+        String[] movePos = Output.fetchPlayerMove(turn);
 
     }
 

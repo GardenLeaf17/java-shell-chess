@@ -1,19 +1,53 @@
+import java.util.Scanner;
+
 public class Output {
 
     public static void printMainMenu() {
 
-        System.out.print("\n         ::::::::::: :::     :::     :::     ::: "+"\n            :+:   :+: :+:   :+:     :+:   :+: :+: "+"\n           +:+  +:+   +:+  +:+     +:+  +:+   +:+ "+"\n          +#+ +#++:++#++: +#+     +:+ +#++:++#++:"+"\n         +#+ +#+     +#+  +#+   +#+  +#+     +#+ "+"\n    #+# #+# #+#     #+#   #+#+#+#   #+#     #+#"+"\n    #####  ###     ###     ###     ###     ### "+"\n\n      ::::::::  :::    ::: :::::::::: ::::::::   :::::::: "+"\n    :+:    :+: :+:    :+: :+:       :+:    :+: :+:    :+:"+"\n   +:+        +:+    +:+ +:+       +:+        +:+ "+"\n  +#+        +#++:++#++ +#++:++#  +#++:++#++ +#++:++#++ "+"\n +#+        +#+    +#+ +#+              +#+        +#+"+"\n#+#    #+# #+#    #+# #+#       #+#    #+# #+#    #+# "+"\n########  ###    ### ########## ########   ######## ");
-        System.out.print("\n\n========================="+" Begin! "+"=========================");
+        System.out.print("\nWelcome to Java Chess!");
+        System.out.print("\n\n============"+" Game begins "+"============");
 
     }
 
-    public static String fetchPlayerInput() {
-        return "";
+    public static String[] fetchPlayerMove(int turn) {
+
+        if (turn == 0) {
+
+            System.out.print("\n\nIt is White's turn.");
+
+        } else {
+            System.out.print("\n\nIt is Black's turn.");
+        }
+
+        Scanner inputScanner = new Scanner(System.in);
+
+
+
+        System.out.print("\n\nWhich piece do you want to move?");
+        System.out.print("\nCoordinates > ");
+        String fromPos = inputScanner.nextLine();
+
+        String choice = inputScanner.nextLine();
+
+
+
+
+
+
+
+        System.out.print("\n\nWhere do you want to move the piece?");
+        System.out.print("\nCoordinates > ");
+
+        String toPos = inputScanner.nextLine();
+
+        return new String[]{fromPos, toPos};
     }
 
-    static void printChessBoardToShell(char[][] chessboardArray, int turn) {
+    static void printChessBoardToShell(char[][] chessboardArray, int turn, int move) {
 
         if (turn == 1) {
+
+            System.out.print("\n\n============"+" Move: "+move+" "+"============");
 
             // invert array for black's perspective
             for (int rank = 0; rank < 8; rank++) {
@@ -34,9 +68,10 @@ public class Output {
 
         for (int rank = 0; rank < 8; rank++) {
 
-            // calculating the rank index number
+            // calculating the rank index number using the current rank
             int index = 8 - rank;
 
+            // if black player's turn then the rank index numbers are reversed
             if (turn == 1) {
 
                 index = rank + 1;
@@ -109,6 +144,7 @@ public class Output {
 
         }
 
+        // if black player's turn then the file letters are reversed
         if (turn == 1) {
 
             System.out.print("\n     h   g   f   e   d   c   b   a");
