@@ -13,35 +13,46 @@ public class Output {
 
         if (turn == 0) {
 
-            System.out.print("\n\nIt is White's turn.");
+            System.out.print("\n\nIt is White's turn now.");
 
         } else {
-            System.out.print("\n\nIt is Black's turn.");
+            System.out.print("\n\nIt is Black's turn now.");
         }
 
         Scanner inputScanner = new Scanner(System.in);
 
+        while (true) {
 
+            System.out.print("\n\nWhat do you want to do?");
+            System.out.print("\nA) Make a move");
+            System.out.print("\nB) Offer a draw");
+            System.out.print("\nC) Resign");
 
+            System.out.print("\n\nYour choice > ");
+            String userChoice = inputScanner.nextLine();
+
+            switch (userChoice.toUpperCase()) {
+                case "A":
+
+            }
+
+        }
+        
         System.out.print("\n\nWhich piece do you want to move?");
         System.out.print("\nCoordinates > ");
         String fromPos = inputScanner.nextLine();
 
         String choice = inputScanner.nextLine();
 
-
-
-
-
-
-
-        System.out.print("\n\nWhere do you want to move the piece?");
+        System.out.print("\n\nWhere do you want to move that piece?");
         System.out.print("\nCoordinates > ");
 
         String toPos = inputScanner.nextLine();
 
         return new String[]{fromPos, toPos};
     }
+
+
 
     static void printChessBoardToShell(char[][] chessboardArray, int turn, int move) {
 
