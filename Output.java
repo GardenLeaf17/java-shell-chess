@@ -21,23 +21,15 @@ public class Output {
 
     }
 
-    public static String[] fetchPlayerMove(int turn, int move) {
-        if (turn == 0) {
-            System.out.print("\n\nWhite's turn");
-
-        } else {
-            System.out.print("\n\nBlack's turn");
-        }
-
-        System.out.print("\nMove " + move );
+    public static String[] fetchPlayerChoice(int turn, int move) {
 
         Scanner inputScanner = new Scanner(System.in);
 
 
-            System.out.print("\n\nWhat do you want to do?");
-            System.out.print("\nA) Make a move");
-            System.out.print("\nB) Offer a draw");
-            System.out.print("\nC) Resign");
+            System.out.print("\n\n What do you want to do?");
+            System.out.print("\n A) Make a move");
+            System.out.print("\n B) Offer a draw");
+            System.out.print("\n C) Resign");
 
             System.out.print("\n\nYour choice > ");
 
@@ -46,7 +38,7 @@ public class Output {
 
 
 
-    static void printChessBoardToShell(char[][] chessboardArray, int turn) {
+    static void printChessBoardToShell(char[][] chessboardArray, int turn, int move) {
         clearConsole();
 
         if (turn == 1) {
@@ -157,6 +149,20 @@ public class Output {
 
         }
 
+        System.out.print("\n\n ♕ ♖♖ ♗♗ ♘♘ ♙♙♙♙♙♙♙♙");
+        System.out.print("\n ♛ ♜♜ ♝♝ ♞♞ ♟♟♟♟♟♟♟♟ +2");
+
+    }
+
+    static void printPlayerTurn(int turn, int move) {
+        System.out.print("\n\n Move " + move);
+
+        if (turn == 0) {
+            System.out.print("\n White's turn");
+
+        } else {
+            System.out.print("\n Black's turn");
+        }
     }
 
 }
