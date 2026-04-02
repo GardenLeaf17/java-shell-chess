@@ -74,9 +74,9 @@ public class Controller {
         int turn = 0;
         int move = 0;
 
-        Output.printChessBoardToShell(chessboard, turn, move);
+        Output.printChessBoardToShell(chessboard, turn);
 
-        String[] movePos = Output.fetchPlayerMove(turn);
+        String[] movePos = Output.fetchPlayerMove(turn, move);
 
     }
 

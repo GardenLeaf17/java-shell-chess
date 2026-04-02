@@ -1,27 +1,36 @@
+import java.io.IOException;
 import java.util.Scanner;
 
 public class Output {
 
-    public static void printMainMenu() {
+    public static void clearConsole() {
+        try {
+            new ProcessBuilder("clear")
+                    .inheritIO()
+                    .start()
+                    .waitFor();
+        } catch (IOException | InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
 
+    public static void printMainMenu() {
+        clearConsole();
         System.out.print("\nWelcome to Java Chess!");
-        System.out.print("\n\n============"+" Game begins "+"============");
+        System.out.print("\n\nGame has begun");
 
     }
 
-    public static String[] fetchPlayerMove(int turn) {
-
+    public static String[] fetchPlayerMove(int turn, int move) {
         if (turn == 0) {
-
-            System.out.print("\n\nIt is White's turn now.");
+            System.out.print("\n\nWhite's turn");
 
         } else {
-            System.out.print("\n\nIt is Black's turn now.");
+            System.out.print("\n\nBlack's turn");
         }
 
         Scanner inputScanner = new Scanner(System.in);
-
-        while (true) {
+        
 
             System.out.print("\n\nWhat do you want to do?");
             System.out.print("\nA) Make a move");
@@ -29,36 +38,16 @@ public class Output {
             System.out.print("\nC) Resign");
 
             System.out.print("\n\nYour choice > ");
-            String userChoice = inputScanner.nextLine();
 
-            switch (userChoice.toUpperCase()) {
-                case "A":
-
-            }
-
-        }
-        
-        System.out.print("\n\nWhich piece do you want to move?");
-        System.out.print("\nCoordinates > ");
-        String fromPos = inputScanner.nextLine();
-
-        String choice = inputScanner.nextLine();
-
-        System.out.print("\n\nWhere do you want to move that piece?");
-        System.out.print("\nCoordinates > ");
-
-        String toPos = inputScanner.nextLine();
-
-        return new String[]{fromPos, toPos};
+        return new String[]{"fromPos", "toPos"};
     }
 
 
 
-    static void printChessBoardToShell(char[][] chessboardArray, int turn, int move) {
+    static void printChessBoardToShell(char[][] chessboardArray, int turn) {
+        clearConsole();
 
         if (turn == 1) {
-
-            System.out.print("\n\n============"+" Move: "+move+" "+"============");
 
             // invert array for black's perspective
             for (int rank = 0; rank < 8; rank++) {
