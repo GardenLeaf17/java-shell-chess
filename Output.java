@@ -76,61 +76,7 @@ public class Output {
 
             for (int file = 0; file < 8; file++) {
 
-                switch (chessboardArray[rank][file]) {
-
-                    case 'k':
-                        System.out.print(" ♚ |");
-                        break;
-
-                    case 'K':
-                        System.out.print(" ♔ |");
-                        break;
-
-                    case 'q':
-                        System.out.print(" ♛ |");
-                        break;
-
-                    case 'Q':
-                        System.out.print(" ♕ |");
-                        break;
-
-                    case 'r':
-                        System.out.print(" ♜ |");
-                        break;
-
-                    case 'R':
-                        System.out.print(" ♖ |");
-                        break;
-
-                    case 'b':
-                        System.out.print(" ♝ |");
-                        break;
-
-                    case 'B':
-                        System.out.print(" ♗ |");
-                        break;
-
-                    case 'n':
-                        System.out.print(" ♞ |");
-                        break;
-
-                    case 'N':
-                        System.out.print(" ♘ |");
-                        break;
-
-                    case 'p':
-                        System.out.print(" ♟ |");
-                        break;
-
-                    case 'P':
-                        System.out.print(" ♙ |");
-                        break;
-
-                    default:
-                        System.out.print("   |");
-                        break;
-
-                }
+                System.out.print(" " + Controller.findPiece(chessboardArray[rank][file], pieces).getPieceIcon() + " |");
 
             }
 

@@ -1,6 +1,6 @@
 public class Controller {
 
-    public static Piece findPiece(String code, Piece[] pieces) {
+    public static Piece findPiece(char code, Piece[] pieces) {
 
         for (int i = 0; i < pieces.length; i++) {
             if (pieces[i].getPieceCode() == code) {
@@ -25,25 +25,27 @@ public class Controller {
         // p=pawn
         // e=empty
 
-        Piece k = new Piece("k","♔",0,"king");
-        Piece K = new Piece("k","♚",0,"king");
+        Piece k = new Piece('k',6,"♔",0,"king");
+        Piece K = new Piece('K',6,"♚",0,"king");
 
-        Piece q = new Piece("q","♕",9,"queen");
-        Piece Q = new Piece("Q","♛",9,"queen");
+        Piece q = new Piece('q',0,"♕",9,"queen");
+        Piece Q = new Piece('Q',0,"♛",9,"queen");
 
-        Piece r = new Piece("r","♖",5,"rook");
-        Piece R = new Piece("R","♜",5,"rook");
+        Piece r = new Piece('r',1,"♖",5,"rook");
+        Piece R = new Piece('R',1,"♜",5,"rook");
 
-        Piece b = new Piece("b","♗",3,"bishop");
-        Piece B = new Piece("B","♝",3,"bishop");
+        Piece b = new Piece('b',2,"♗",3,"bishop");
+        Piece B = new Piece('B',2,"♝",3,"bishop");
 
-        Piece n = new Piece("n","♘",3,"knight");
-        Piece N = new Piece("N","♞",3,"knight");
+        Piece n = new Piece('n',3,"♘",3,"knight");
+        Piece N = new Piece('N',3,"♞",3,"knight");
 
-        Piece p = new Piece("p","♙",1,"pawn");
-        Piece P = new Piece("P","♟",1,"pawn");
+        Piece p = new Piece('p',4,"♙",1,"pawn");
+        Piece P = new Piece('P',4,"♟",1,"pawn");
 
-        return new Piece[]{k,K,q,Q,r,R,b,B,n,N,p,P};
+        Piece e = new Piece('e',5," ",0,"empty");
+
+        return new Piece[]{k,K,q,Q,r,R,b,B,n,N,p,P,e};
 
     }
 

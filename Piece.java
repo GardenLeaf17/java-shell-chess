@@ -1,14 +1,16 @@
 public class Piece {
 
-    public String pieceCode;
+    public char pieceCode;
+    public int pieceType;
     public String pieceIcon;
     public int pieceVal;
     public String pieceName;
 
     // overloaded constructor
-    public Piece(String pieceCode, String pieceIcon, int pieceVal, String pieceName) {
+    public Piece(char pieceCode, int pieceType, String pieceIcon, int pieceVal, String pieceName) {
 
         this.pieceCode = pieceCode;
+        this.pieceType = pieceType;
         this.pieceIcon = pieceIcon;
         this.pieceVal = pieceVal;
         this.pieceName = pieceName;
@@ -28,7 +30,7 @@ public class Piece {
         return this.pieceName;
     }
 
-    public String getPieceCode() {
+    public char getPieceCode() {
         return this.pieceCode;
     }
 
