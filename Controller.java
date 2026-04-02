@@ -1,9 +1,17 @@
 public class Controller {
 
-    public static char[][] initialiseBoard() {
+    public static Piece findPiece(String code, Piece[] pieces) {
 
-        char[][] chessboardArray = new char[8][8];
+        for (int i = 0; i < pieces.length; i++) {
+            if (pieces[i].getPieceCode() == code) {
+                return pieces[i];
+            }
+        }
 
+        return null;
+    }
+
+    public static Piece[] initialisePieces() {
         // piece encoding:
 
         // white pieces are in lowercase
@@ -16,6 +24,32 @@ public class Controller {
         // n=knight
         // p=pawn
         // e=empty
+
+        Piece k = new Piece("k","♔",0,"king");
+        Piece K = new Piece("k","♚",0,"king");
+
+        Piece q = new Piece("q","♕",9,"queen");
+        Piece Q = new Piece("Q","♛",9,"queen");
+
+        Piece r = new Piece("r","♖",5,"rook");
+        Piece R = new Piece("R","♜",5,"rook");
+
+        Piece b = new Piece("b","♗",3,"bishop");
+        Piece B = new Piece("B","♝",3,"bishop");
+
+        Piece n = new Piece("n","♘",3,"knight");
+        Piece N = new Piece("N","♞",3,"knight");
+
+        Piece p = new Piece("p","♙",1,"pawn");
+        Piece P = new Piece("P","♟",1,"pawn");
+
+        return new Piece[]{k,K,q,Q,r,R,b,B,n,N,p,P};
+
+    }
+
+    public static char[][] initialiseBoard() {
+
+        char[][] chessboardArray = new char[8][8];
 
         // adding kings
         chessboardArray[7][4] = 'k';
@@ -70,13 +104,12 @@ public class Controller {
     public static void beginGame() {
 
         char[][] chessboard = Controller.initialiseBoard();
+        Piece[] pieces = initialisePieces();
 
         int turn = 0;
         int move = 1;
 
-
-
-        Output.printChessBoardToShell(chessboard, turn, move);
+        Output.printChessBoardToShell(chessboard, pieces, turn, move);
         //Output.printCapturedPieces();
         Output.printPlayerTurn(turn, move);
 

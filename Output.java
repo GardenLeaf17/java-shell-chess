@@ -38,7 +38,7 @@ public class Output {
 
 
 
-    static void printChessBoardToShell(char[][] chessboardArray, int turn, int move) {
+    static void printChessBoardToShell(char[][] chessboardArray, Piece[] pieces, int turn, int move) {
         clearConsole();
 
         if (turn == 1) {
