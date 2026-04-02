@@ -29,8 +29,10 @@ public class Output {
             System.out.print("\n\nBlack's turn");
         }
 
+        System.out.print("\nMove " + move );
+
         Scanner inputScanner = new Scanner(System.in);
-        
+
 
             System.out.print("\n\nWhat do you want to do?");
             System.out.print("\nA) Make a move");

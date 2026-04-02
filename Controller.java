@@ -72,7 +72,7 @@ public class Controller {
         char[][] chessboard = Controller.initialiseBoard();
 
         int turn = 0;
-        int move = 0;
+        int move = 1;
 
         Output.printChessBoardToShell(chessboard, turn);
 
